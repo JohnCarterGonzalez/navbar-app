@@ -1,16 +1,17 @@
-import logo from './logo.svg';
-import './App.scss';
-import './App.css';
+import React, { useState } from 'react';
+import NavBar from './components/NavBar.js';
+import FormWrapper from './components/FormWrapper.js';
+import Context from "./context/Context.js";
 
 function App() {
-  return (
-    {/*
-    <Wrapper>
-      <Navbar />
+  const [ name, setName ] = useState("");
+
+  <div>
+    <Context.Provider value= {{ name, setName }}>
+      <NavBar />
       <FormWrapper />
-    </Wrapper>
-    */}
-  );
+    </Context.Provider> 
+  </div>;
 }
 
 export default App;

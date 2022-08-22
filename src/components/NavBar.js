@@ -1,17 +1,18 @@
 import React, { useContext } from 'react';
-import NameContext from '../context/Context.js';
+import { Navbar, Container } from 'react-bootstrap';
+import Context from '../context/Context.js';
 
-const style = {
-  background: "purple", 
-  display: "flex",
-  padding: "20px", 
-  alignItems: "center", 
-  justifyContent: "flex-end", 
-  color: "white",
-};
+const NavBar = () => {
+  const context = useContext(Context);
+  return (
+  <>
+      <Navbar bg="success">
+        <Container>
+          <Navbar.Brand href="#">Hello, { context.name }</Navbar.Brand>
+        </Container>
+      </Navbar>
+  </>
+  );
+}
 
-export default () => {
-  const { name } = useContext(NameContext);
-
-  return <div style={style}> Hi {name}!</div>
-};
+export default NavBar;

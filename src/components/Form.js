@@ -1,10 +1,10 @@
 import React, {useContext} from 'react';
-import NameContext from './../context/Context.js'; 
-import { Form, Col, Button } from 'react-bootstrap';
+import Context from './../context/Context.js'; 
+import { Form, Button } from 'react-bootstrap';
 
-const navForm = (props) => {
+const NavForm = () => {
   
-  const nameContext = useContext(NameContext);
+  const context = useContext(Context);
   let inputName = "";
 
   const handleNameChange = e => {
@@ -20,7 +20,7 @@ const navForm = (props) => {
   return (
     <Form className = "mb-3">
 
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3" controlId="formBasicName">
         <Form.Label>Name:</Form.Label>
         <Form.Control type="text" placeholder="Bob Smith" defaultValue="" handleNameChange={ handleNameChange }/>
       </Form.Group>
@@ -32,5 +32,5 @@ const navForm = (props) => {
     </Form> 
 
   );
-  export default navForm;
 }
+export default NavForm;
