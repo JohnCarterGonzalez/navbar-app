@@ -6,12 +6,14 @@ import Context from "./context/Context.js";
 function App() {
   const [ name, setName ] = useState("");
 
+  return (
   <div>
     <Context.Provider value= {{ name, setName }}>
       <NavBar />
       <FormWrapper />
     </Context.Provider> 
-  </div>;
+  </div>
+  );
 }
 
 export default App;
